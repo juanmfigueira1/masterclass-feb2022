@@ -127,3 +127,22 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# No seguir csv
+*.csv
+
+# No seguir excel
+*.xlsx
+*.zip
+
+# No seguir Carpeta Local, Bajadas esta excluida por tipo de Archivos pero como carpeta debe existir
+local/
+
+# No seguir datos carpeta MAC
+.DS_Store
+
+# No seguir secrets.json
+client_secrets.json
+
+# No seguir html
+*.html
