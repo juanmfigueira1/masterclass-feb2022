@@ -1,5 +1,5 @@
 from google.oauth2 import service_account # para generar conexion
-import pandas as pd # para interactuar con BQ
+import pandas as pd # para leer BQ
 # from google.cloud import bigquery # otra opcion para interactuar con BQ pero esta libreria es de google
 
 # Generamos conexion a BQ

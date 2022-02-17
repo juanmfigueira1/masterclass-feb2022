@@ -1,9 +1,9 @@
-import pandas as pd
-from google.oauth2 import service_account # para generar conexion
+import pandas as pd # para leer el csv anterior en la carpeta local
+from google.oauth2 import service_account # para generar conexion con BigQuery
 import pandas_gbq # para interactuar con BQ
 # from google.cloud import bigquery # otra opcion para interactuar con BQ pero esta libreria es de google
 
-# Primero leemos el csv generado antes con Pandas
+# Primero, con Pandas, leemos el csv generado anteriormente
 df = pd.read_csv('local/Bajadas/df_covid_por_estado.csv')
 
 # Generamos conexion a BQ
