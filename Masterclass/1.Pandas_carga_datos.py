@@ -54,7 +54,7 @@ serie_means[mayor_a_0].index.to_list()
 cols_2_use.extend(serie_means[mayor_a_0].index.to_list())
 cols_2_use
 df = df[cols_2_use]
-df.head()
+print(df.head())
 
 
 # Guardamos el DF generado
