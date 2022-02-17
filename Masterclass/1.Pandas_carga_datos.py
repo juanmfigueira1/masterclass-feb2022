@@ -21,6 +21,9 @@ df[state_AK]
 df.columns
 df.describe()
 
+# Agregamos un campo o columna nueva
+df['letalidad'] = df['death'] / df['positive']
+
 # Elegimos quedarnos con las columnas cuya media general  sea mayor a cero
 cols_2_use = ['date','state']
 mayor_a_0 =df.describe().iloc[1]>0 # al seleccionar una sola fila devuelve una serie. Identificamos las que tienen mean > 0
@@ -33,7 +36,6 @@ df = df[cols_2_use]
 
 # Guardamos el DF generado
 df.to_csv('local/Bajadas/df_covid_por_estado.csv', index=False) # en este caso lo guardamos en nuestra carpeta local
-
 
 
 
