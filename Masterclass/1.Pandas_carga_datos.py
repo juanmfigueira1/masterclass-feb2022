@@ -3,12 +3,14 @@ import pandas as pd
 
 # Importar datos de COVID de la web con Pandas (https://covidtracking.com/data/api)
 df = pd.read_csv('https://api.covidtracking.com/v1/states/daily.csv')
-df.head()
 
 
 # Vemos que info hay
+df.head()
 df.shape
 df.info()
+df.sort_values(by='date', ascending=True) # inplace = True si queremos que esto afecte al DF
+df
 
 
 # Convertimos date a formato Date
@@ -54,7 +56,7 @@ serie_means[mayor_a_0].index.to_list()
 cols_2_use.extend(serie_means[mayor_a_0].index.to_list())
 cols_2_use
 df = df[cols_2_use]
-print(df.head())
+df
 
 
 # Guardamos el DF generado
