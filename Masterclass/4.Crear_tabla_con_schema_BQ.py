@@ -12,7 +12,7 @@ bq_cred = Drive_Connection()
 
 
 # Crear una tabla vacía en BQ, definiendo el esquema con la libreria y API de google.
-client = bigquery.Client(project='data-layer-vtex-apub',credentials=bq_cred)
+client = bigquery.Client(project='masterclass-python-bigquery',credentials=bq_cred)
 project = client.project
 dataset_ref = bigquery.DatasetReference(project, 'data_warehouse')
 table_ref = dataset_ref.table("masterclass_feb22_test")

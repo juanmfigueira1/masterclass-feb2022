@@ -12,14 +12,14 @@ def Drive_Connection():
 bq_cred = Drive_Connection()
 
 # Si queremos leer una tabla
-sql = """SELECT * FROM `data-layer-vtex-apub.data_warehouse.masterclass_feb22`"""
-df_bq = pd.read_gbq(sql, project_id='data-layer-vtex-apub', credentials = bq_cred, dialect='standard')
+sql = """SELECT * FROM `masterclass-python-bigquery.data_warehouse.masterclass_feb22`"""
+df_bq = pd.read_gbq(sql, project_id='masterclass-python-bigquery', credentials = bq_cred, dialect='standard')
 print(df_bq)
 
-sql_ak = """SELECT * FROM `data-layer-vtex-apub.data_warehouse.masterclass_feb22` where state = 'AK'"""
-df_bq_ak = pd.read_gbq(sql_ak, project_id='data-layer-vtex-apub', credentials = bq_cred, dialect='standard')
+sql_ak = """SELECT * FROM `masterclass-python-bigquery.data_warehouse.masterclass_feb22` where state = 'AK'"""
+df_bq_ak = pd.read_gbq(sql_ak, project_id='masterclass-python-bigquery', credentials = bq_cred, dialect='standard')
 print(df_bq_ak)
 
-sql_fecha = """SELECT * FROM `data-layer-vtex-apub.data_warehouse.masterclass_feb22` where date <= '2020-07-31'"""
-df_bq_fecha = pd.read_gbq(sql_fecha, project_id='data-layer-vtex-apub', credentials = bq_cred, dialect='standard')
+sql_fecha = """SELECT * FROM `masterclass-python-bigquery.data_warehouse.masterclass_feb22` where date <= '2020-07-31'"""
+df_bq_fecha = pd.read_gbq(sql_fecha, project_id='masterclass-python-bigquery', credentials = bq_cred, dialect='standard')
 print(df_bq_fecha)

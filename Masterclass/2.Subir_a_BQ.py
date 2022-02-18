@@ -15,10 +15,10 @@ def Drive_Connection():
 bq_cred = Drive_Connection()
 
 # Enviamos el df a BQ - Podemos crear o reemplazar una tabla
-pandas_gbq.to_gbq(df, 'data_warehouse.masterclass_feb22', project_id= 'data-layer-vtex-apub', if_exists= 'replace', credentials = bq_cred)
+pandas_gbq.to_gbq(df, 'data_warehouse.masterclass_feb22', project_id= 'masterclass-python-bigquery', if_exists= 'replace', credentials = bq_cred)
 
 # Si queremos anexar datos de una tabla en lugar de reemplazar
-pandas_gbq.to_gbq(df, 'data_warehouse.masterclass_feb22', project_id= 'data-layer-vtex-apub', if_exists= 'append', credentials = bq_cred)
+pandas_gbq.to_gbq(df, 'data_warehouse.masterclass_feb22', project_id= 'masterclass-python-bigquery', if_exists= 'append', credentials = bq_cred)
 
 
 
