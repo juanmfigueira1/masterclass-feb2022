@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-# Importar datos de COVID de la web con Pandas
+# Importar datos de COVID de la web con Pandas (https://covidtracking.com/data/api)
 df = pd.read_csv('https://api.covidtracking.com/v1/states/daily.csv')
 df.head()
 
