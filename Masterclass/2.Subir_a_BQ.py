@@ -1,7 +1,6 @@
 import pandas as pd # para leer el csv anterior en la carpeta local
 from google.oauth2 import service_account # para generar conexion con BigQuery
 import pandas_gbq # para interactuar con BQ
-# from google.cloud import bigquery # otra opcion para interactuar con BQ pero esta libreria es de google
 
 # Primero, con Pandas, leemos el csv generado anteriormente
 df = pd.read_csv('local/Bajadas/df_covid_por_estado.csv')
@@ -20,5 +19,7 @@ pandas_gbq.to_gbq(df, 'data_warehouse.masterclass_feb22', project_id= 'data-laye
 
 # Si queremos anexar datos de una tabla en lugar de reemplazar
 pandas_gbq.to_gbq(df, 'data_warehouse.masterclass_feb22', project_id= 'data-layer-vtex-apub', if_exists= 'append', credentials = bq_cred)
+
+
 
 
