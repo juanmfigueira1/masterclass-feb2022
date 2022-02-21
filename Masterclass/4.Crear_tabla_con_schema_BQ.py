@@ -2,13 +2,7 @@ from google.oauth2 import service_account # para generar conexion con BigQuery
 from google.cloud import bigquery # otra opcion para interactuar con BQ pero esta libreria es de google
 
 # Generamos conexion a BQ
-def Drive_Connection():
-    '''Genera la conexion con BQ'''
-    bq_cred = service_account.Credentials.from_service_account_file('local/big_query.json')
-    print("Esta funcion devuelve las credenciales para la conexion: 'bq_cred'")
-    return bq_cred
-
-bq_cred = Drive_Connection()
+bq_cred = service_account.Credentials.from_service_account_file('local/big_query.json')
 
 
 # Crear una tabla vacía en BQ, definiendo el esquema con la libreria y API de google.

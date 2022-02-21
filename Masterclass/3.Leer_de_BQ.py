@@ -3,17 +3,11 @@ import pandas as pd # para leer BQ
 # from google.cloud import bigquery # otra opcion para interactuar con BQ pero esta libreria es de google
 
 # Generamos conexion a BQ
-def Drive_Connection():
-    '''Genera la conexion con BQ'''
-    bq_cred = service_account.Credentials.from_service_account_file('local/big_query.json')
-    print("Esta funcion devuelve las credenciales para la conexion: 'bq_cred'")
-    return bq_cred
-
-bq_cred = Drive_Connection()
+bq_cred = service_account.Credentials.from_service_account_file('local/big_query.json')
 
 # Si queremos leer una tabla
 sql = """SELECT * FROM `masterclass-python-bigquery.data_warehouse.masterclass_feb22`"""
-df_bq = pd.read_gbq(sql, project_id='masterclass-python-bigquery', credentials = bq_cred, dialect='standard')
+df_bq = pd.read_gbq(sql, project_id='masterclass-python-bigquery', credentials = bq_cred, dialect='standard') #Dialect standard: para usar BigQuery’s standard SQL dialect
 print(df_bq)
 
 sql_ak = """SELECT * FROM `masterclass-python-bigquery.data_warehouse.masterclass_feb22` where state = 'AK'"""
