@@ -28,12 +28,14 @@ df['state'] = df['state'].astype('string')
 df.info()
 
 # Recorremos el DataFrame
-df.iloc[0,:] # con iloc podemos movernos en el dataframe por posiciones. al seleccionar una sola fila y/o columna devuelve una serie en lugar de DF
 df.iloc[:,0] # trae todas las filas para la primera columna con la estructura de Serie
 df.iloc[0:5,-1] # trae las 5 1ras filas para la ultima columna con la estructura de Serie
+df.iloc[0,:] # con iloc podemos movernos en el dataframe por posiciones. al seleccionar una sola fila y/o columna devuelve una serie en lugar de DF
 
 
 # Aplicamos un filtro
+df['state']
+
 state_AK = df['state']=='AK' # Trae todos los registros en que el estado sea AK
 state_AK
 df[state_AK]
@@ -51,13 +53,6 @@ import numpy as np
 pd.pivot_table(df, values='letalidad', index=['date'],
                     columns=['state'], aggfunc=np.mean)
 
-
-# Ejemplo funcion
-def funcion_masterclass(nro):
-    x = nro**2 + nro*3 + 1
-    return x
-
-funcion_masterclass(2)
 
 
 # Suponiendo que necesitaramos quedarnos solo con las columnas del DataFrame con mean >0
