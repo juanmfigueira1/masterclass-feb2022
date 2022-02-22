@@ -1,11 +1,14 @@
-from google.oauth2 import service_account # para generar conexion con BigQuery
-from google.cloud import bigquery # otra opcion para interactuar con BQ pero esta libreria es de google
+# Objetivo: vamos a conectarnos con Bigquery y desde Python vamos a crear una tabla desde cero, definiendo los schemas.
+
 
 # Generamos conexion a BQ
+from google.oauth2 import service_account # para generar conexion con BigQuery
 bq_cred = service_account.Credentials.from_service_account_file('local/big_query.json')
 
 
 # Crear una tabla vacía en BQ, definiendo el esquema con la libreria y API de google.
+from google.cloud import bigquery # otra opcion para interactuar con BQ pero esta libreria es de google
+
 client = bigquery.Client(project='masterclass-python-bigquery',credentials=bq_cred)
 project = client.project
 dataset_ref = bigquery.DatasetReference(project, 'data_warehouse')
