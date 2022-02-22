@@ -3,11 +3,7 @@ En este espacio pueden dejar la documentación del proyecto y los comentarios qu
 
 # Prerequisitos
 Antes de comenza instalar las librerias que figuran en requirements:
-Opcion1 - desde terminal:
-    pip install requirements.txt
+Desde terminal:
+    pip install -r requirements.txt
 
-Opcion2:
-    Pandas: en general viene ya instalado
-    pandas_gbq: en general viene ya instalado
-    google.oauth2: Instalar con pip install google.oauth2
-    google.cloud: Instalar con pip install google.cloud
+
