@@ -1,3 +1,5 @@
+# Objetivo: Vamos a leer el DF anterior, vamos a crear la conexión con BigQuery y vamos a enviar este DF a Bigquery
+
 import pandas as pd # para leer el csv anterior en la carpeta local
 from google.oauth2 import service_account # para generar conexion con BigQuery
 import pandas_gbq # para interactuar con BQ

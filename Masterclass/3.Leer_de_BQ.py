@@ -1,3 +1,5 @@
+# Objetivo: Vamos a crear la conexión con BigQuery y vamos a leer mediante consulta SQL desde Python.
+
 from google.oauth2 import service_account # para generar conexion
 import pandas as pd # para leer BQ
 # from google.cloud import bigquery # otra opcion para interactuar con BQ pero esta libreria es de google
@@ -14,6 +16,3 @@ sql_ak = """SELECT * FROM `masterclass-python-bigquery.data_warehouse.masterclas
 df_bq_ak = pd.read_gbq(sql_ak, project_id='masterclass-python-bigquery', credentials = bq_cred, dialect='standard')
 print(df_bq_ak)
 
-sql_fecha = """SELECT * FROM `masterclass-python-bigquery.data_warehouse.masterclass_feb22` where date <= '2020-07-31'"""
-df_bq_fecha = pd.read_gbq(sql_fecha, project_id='masterclass-python-bigquery', credentials = bq_cred, dialect='standard')
-print(df_bq_fecha)
